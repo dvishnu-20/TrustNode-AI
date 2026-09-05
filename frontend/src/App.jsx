@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import CheckoutPage from './pages/CheckoutPage';
 import Dashboard from './pages/Dashboard';
+import Intelligence from './pages/Intelligence';
+import Analytics from './pages/Analytics';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Landing3DScene from './components/Landing3DScene';
 
@@ -116,6 +118,12 @@ function Home() {
           <Link to="/dashboard" target="_blank" className="font-space text-sm hidden md:block hover:opacity-70 transition-opacity">
             Command Center
           </Link>
+          <Link to="/intelligence" target="_blank" className="font-space text-sm hidden md:block hover:opacity-70 transition-opacity">
+            Intelligence
+          </Link>
+          <Link to="/analytics" target="_blank" className="font-space text-sm hidden md:block hover:opacity-70 transition-opacity">
+            Analytics
+          </Link>
           <button onClick={startDemo} className="border border-white/30 px-4 py-2 text-sm font-space hover:bg-white hover:text-black transition-colors rounded-full">
             Live Demo
           </button>
@@ -220,6 +228,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/intelligence" element={<Intelligence />} />
+        <Route path="/analytics" element={<Analytics />} />
         <Route path="/checkout/:sessionId" element={<CheckoutPageWrapper />} />
       </Routes>
     </BrowserRouter>

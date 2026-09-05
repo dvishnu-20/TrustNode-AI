@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import websocket, payment
+from app.api import websocket, payment, analytics, orders, telemetry, risk
 
 app = FastAPI(title="TrustNode AI")
 
@@ -13,10 +13,11 @@ app.add_middleware(
 )
 
 app.include_router(websocket.router)
-from app.api import analytics, orders
 app.include_router(analytics.router)
 app.include_router(orders.router)
 app.include_router(payment.router)
+app.include_router(telemetry.router)
+app.include_router(risk.router)
 
 @app.get("/")
 def read_root():
