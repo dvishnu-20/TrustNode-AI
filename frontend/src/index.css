@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-revert-bg: #040D10;
+  --color-revert-cyan: #00C2A8;
+  --color-revert-cyan-dark: #0E4B49;
+  --color-revert-blue: #0070F3;
+  --color-revert-text-muted: #8A99AD;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-revert-bg);
+  color: #FFFFFF;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(0, 112, 243, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(0, 194, 168, 0.05) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Base typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space);
+  letter-spacing: -0.025em;
+}
+
+.sub-label {
+  font-family: var(--font-space);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-revert-text-muted);
+}
+
+/* Revert specific UI components */
+.pill-highlight {
+  background-color: var(--color-revert-cyan);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.125rem 0.5rem;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.pill-highlight-dark {
+  background-color: rgba(0, 194, 168, 0.2);
+  color: var(--color-revert-cyan);
+  border-radius: 6px;
+  padding: 0.125rem 0.5rem;
+  display: inline-block;
+  font-weight: 600;
+  border: 1px solid rgba(0, 194, 168, 0.3);
+}
+
+.revert-btn {
+  background-color: var(--color-revert-cyan);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-space);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 194, 168, 0);
+}
+
+.revert-btn:hover {
+  box-shadow: 0 0 20px rgba(0, 194, 168, 0.4);
+}
+
+.revert-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.viewport-glow {
+  box-shadow: inset 0 0 30px rgba(0, 112, 243, 0.15), inset 0 0 25px rgba(0, 194, 168, 0.05);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.glass-box {
+  background: rgba(4, 13, 16, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 194, 168, 0.2);
+  border-radius: 1rem;
+}
+
+.grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 194, 168, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 194, 168, 0.05) 1px, transparent 1px);
+}
+
+.dotted-border {
+  border: 1px dotted rgba(138, 153, 173, 0.3);
+}
+
+/* Risk specific colors overriding standard ones */
+.text-revert-cyan { color: var(--color-revert-cyan); }
+.bg-revert-cyan { background-color: var(--color-revert-cyan); }
